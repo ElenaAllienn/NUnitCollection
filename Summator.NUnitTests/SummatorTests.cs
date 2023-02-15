@@ -7,10 +7,14 @@ namespace Summator.NUnitTests
         [Test]
         public void Test_Summator_SumTwoPositiveNumbers()
         {
+            //Arrange
             var nums = new int[] { 1, 2 };
             var actual = Summator.Sum(nums);
 
+            //Act
             var expected = 3;
+
+            //Assert
 
             Assert.AreEqual(expected, actual);
         }
@@ -56,6 +60,17 @@ namespace Summator.NUnitTests
             var actual = Summator.Sum(nums);
 
             var expected = 3000000000;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_Summator_Avarage()
+        {
+            var nums = new int[] { 4, 5, 7 };
+            var actual = Summator.Avarage(nums);
+
+            var expected = actual;
 
             Assert.AreEqual(expected, actual);
         }

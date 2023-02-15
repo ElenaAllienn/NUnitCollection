@@ -25,8 +25,9 @@ namespace Summator
             {
                 sum += arr[i];
             }
-            return sum /arr.Length;
+            return sum / arr.Length;
         }
+
 
 
         //public static void Test_SumTwoNumbers()

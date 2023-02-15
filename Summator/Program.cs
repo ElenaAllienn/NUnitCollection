@@ -8,7 +8,8 @@
 
             //Summator.Test_SumEmptyArray();
 
-            
+            //Console.WriteLine("The avarage value is:" + Summator.Avarage(new int[] { 4, 5, 7 }));
+
         }
                     
     }
