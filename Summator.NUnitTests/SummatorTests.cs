@@ -1,4 +1,7 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using NUnit.Framework;
+using System;
+using System.IO;
 
 namespace Summator.NUnitTests
 {
@@ -62,6 +65,10 @@ namespace Summator.NUnitTests
             var expected = 3000000000;
 
             Assert.AreEqual(expected, actual);
+
+            //Constraints
+
+            Assert.That(expected, Is.EqualTo(actual));
         }
 
         [Test]
@@ -73,6 +80,61 @@ namespace Summator.NUnitTests
             var expected = actual;
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AssertionsExample()
+        {
+            //Assert boolean condition
+
+            Assert.That(9 == 9);
+
+            Assert.That(9, Is.GreaterThan(6));
+
+           
+            //Range Assertions
+
+            double percentage = 99.95;
+            Assert.That(percentage, Is.InRange(80, 100));
+
+
+            //String assertions
+
+            Assert.That("I want to become the best QA", Does.Contain("QA"));
+
+            
+            //Asseetions by regex matching
+
+            string date = "7/11/2021";
+            Assert.That(date, Does.Match(@"^\d{1,2}/\d{1,2}/\d{4}$"));
+
+
+            //Assertions for expected exception
+            Assert.That(() => "abc"[45], Throws.InstanceOf<Exception>());
+            Assert.That(() => "abc"[45], Throws.TypeOf<IndexOutOfRangeException>());
+
+            //Assert.That(() => Summator.Sum(new int[] { 1000000000 , 1000000000, 1000000000 }, Throws.TypeOf<IndexOutOfRangeExceptio>));
+
+
+            //Collection assertions
+            Assert.That(new int[] {4, 5 , 6 }, Has.Member(6));
+
+
+            //Collection range assertions
+            var percentages = new int[] { 10, 30, 50, 100 };
+            Assert.That(percentages, Is.All.InRange(0, 100));
+
+
+            ////File / directory assertions
+            //Assert.That(string filePath, Does.Exist);
+            Assert.That("C:\\Users\\User\\Desktop\\Links.txt", Does.Exist);
+
+            //DirectoryAssert.Exists(string path);
+
+
+            //Messages are very important
+            Assert.That(percentage, Is.EqualTo(100), "DDS-to koeto se vrysta");
+
         }
 
     }
