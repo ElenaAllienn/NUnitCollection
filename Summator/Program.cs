@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("The sum is: " + Summator.Sum(new int[] { 1, 2, 3 }));
+            //Summator.Test_SumTwoNumbers();
+
+            //Summator.Test_SumEmptyArray();
+
+            
         }
                     
     }
