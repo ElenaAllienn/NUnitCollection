@@ -71,16 +71,6 @@ namespace Summator.NUnitTests
             Assert.That(expected, Is.EqualTo(actual));
         }
 
-        [Test]
-        public void Test_Summator_Avarage()
-        {
-            var nums = new int[] { 4, 5, 7 };
-            var actual = Summator.Avarage(nums);
-
-            var expected = actual;
-
-            Assert.AreEqual(expected, actual);
-        }
 
         [Test]
         public void AssertionsExample()
@@ -135,6 +125,47 @@ namespace Summator.NUnitTests
             //Messages are very important
             //Assert.That(percentage, Is.EqualTo(100), "DDS-to koeto se vrysta");
 
+        }
+
+        [Test]
+        public void Test_Summator_Average()
+        {
+            var nums = new int[] { 4, 5, 7 };
+            var actual = Summator.Average(nums);
+
+            var expected = actual;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_Summator_AverageTwoPositiveIntNumbers()
+        {
+            //Arrange
+            var nums = new int[] { 3, 5 };
+            var actual = Summator.Average(nums);
+
+            //Act
+            var expected = 4;
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_Summator_AverageTwoPositiveDoubleNumbers()
+        {
+            //Arrange
+            var nums = new int[] { 1, 2 };
+            var actual = Summator.Average(nums);
+
+            //Act
+            var expected = 1.5;
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
         }
 
     }

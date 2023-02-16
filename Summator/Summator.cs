@@ -18,7 +18,7 @@ namespace Summator
             return sum;
         }
 
-        public static double Avarage(int[] arr)
+        public static double Average(int[] arr)
         {
             double sum = 0;
             for (int i = 0; i < arr.Length; i++)
@@ -26,6 +26,7 @@ namespace Summator
                 sum += arr[i];
             }
             return sum / arr.Length;
+
         }
 
 
