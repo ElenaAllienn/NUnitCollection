@@ -25,7 +25,7 @@ namespace Summator.NUnitTests
         [Test]
         public void Test_Summator_SumTwoNegativeNumbers()
         {
-            var nums = new int[] {-1, -99 };
+            var nums = new int[] { -1, -99 };
             var actual = Summator.Sum(nums);
 
             var expected = -100;
@@ -81,7 +81,7 @@ namespace Summator.NUnitTests
 
             Assert.That(9, Is.GreaterThan(6));
 
-           
+
             //Range Assertions
 
             double percentage = 99.95;
@@ -92,7 +92,7 @@ namespace Summator.NUnitTests
 
             Assert.That("I want to become the best QA", Does.Contain("QA"));
 
-            
+
             //Asseetions by regex matching
 
             string date = "7/11/2021";
@@ -107,7 +107,7 @@ namespace Summator.NUnitTests
 
 
             //Collection assertions
-            Assert.That(new int[] {4, 5 , 6 }, Has.Member(6));
+            Assert.That(new int[] { 4, 5, 6 }, Has.Member(6));
 
 
             //Collection range assertions
@@ -166,6 +166,19 @@ namespace Summator.NUnitTests
             //Assert
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] { 1, 2 }, 3)]
+        [TestCase(new int[] { 1 }, 1)]
+        [TestCase(new int[] {  - 3, -8}, -11)]
+        [TestCase(new int[] { 5, 0 }, 5)]
+        [TestCase(new int[] { }, 0)]
+        
+        public void Test_Summator_SumDDT(int[] values, long expected)
+        {
+            var actual = Summator.Sum(values);
+
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
     }
